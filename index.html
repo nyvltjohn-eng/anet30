@@ -1,0 +1,214 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><style>html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Anet 30 · Esmarin</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,500&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one tall gift card — hero photo of the two of them, then the hotel, then the day as a timeline, then a small album. Single warm-evening theme by choice (a spa at dusk). */
+:root{
+  --bg:#17201d;        /* pine night */
+  --bg-2:#1f2b27;
+  --card:#24322d;
+  --fg:#f3ece0;        /* warm cream */
+  --fg-2:#c9c0b0;
+  --muted:#8e9a92;
+  --accent:#e2b56b;    /* candle gold */
+  --accent-2:#b98a4a;
+  --line:rgba(243,236,224,.14);
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:300;line-height:1.08;margin:0;text-wrap:balance}
+.eyebrow{font-family:var(--body);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
+p{margin:0}
+
+/* hero */
+.hero{position:relative;min-height:78vh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(23,32,29,.05) 0%,rgba(23,32,29,.25) 45%,rgba(23,32,29,.92) 85%,var(--bg) 100%)}
+.hero .wrap{padding-block:48px 28px;width:100%}
+.hero .eyebrow{margin-bottom:14px}
+.hero h1{font-size:clamp(44px,11vw,88px);letter-spacing:-.01em}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+.hero .sub{margin-top:14px;font-size:18px;color:var(--fg-2);max-width:34ch}
+
+/* letter */
+.letter{padding-block:40px 8px}
+.letter p{font-family:var(--display);font-size:clamp(21px,3.2vw,26px);line-height:1.4;font-weight:300;max-width:30ch}
+.letter p+p{margin-top:16px}
+.sig{margin-top:22px;font-family:var(--display);font-style:italic;font-size:22px;color:var(--accent)}
+
+/* gift card */
+.gift{padding-block:36px 8px}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.gcard img{aspect-ratio:16/8;object-fit:cover;width:100%}
+.gbody{padding:24px 22px 26px;display:grid;gap:14px}
+.gbody h2{font-size:clamp(30px,5.5vw,40px)}
+.gbody .stars{color:var(--accent);letter-spacing:.2em;font-size:14px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 18px;margin-top:6px;padding-top:16px;border-top:1px solid var(--line)}
+.fact dt{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.fact dd{margin:3px 0 0;font-size:17px;font-variant-numeric:tabular-nums}
+.gbody p.lead{color:var(--fg-2)}
+
+/* timeline */
+.day{padding-block:44px 10px}
+.day h2{font-size:clamp(30px,5.5vw,40px);margin-top:10px}
+.day .intro{color:var(--fg-2);margin-top:10px;max-width:52ch}
+.tl{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0}
+.stop{display:grid;grid-template-columns:72px 1fr;gap:18px;position:relative;padding-bottom:30px}
+.stop::before{content:"";position:absolute;left:35px;top:34px;bottom:0;width:1px;background:var(--line)}
+.stop:last-child::before{display:none}
+.stop .time{font-family:var(--display);font-size:28px;font-weight:300;font-variant-numeric:tabular-nums;color:var(--fg);line-height:1;padding-top:4px;text-align:center}
+.stop .time small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:600}
+.stop.big .time{color:var(--accent)}
+.stop .what{min-width:0;display:grid;gap:10px}
+.stop h3{font-size:clamp(22px,4vw,27px);font-weight:600}
+.stop p{color:var(--fg-2)}
+.stop img{border-radius:12px;aspect-ratio:3/2;object-fit:cover;width:100%;margin-top:4px}
+.stop .pill{display:inline-block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--bg);background:var(--accent);border-radius:999px;padding:4px 10px;width:max-content}
+.stop ul{margin:4px 0 0;padding-left:18px;color:var(--fg-2)}
+.stop li+li{margin-top:4px}
+
+/* album */
+.album{padding-block:40px 10px}
+.album h2{font-size:clamp(30px,5.5vw,40px);margin-top:10px}
+.album .intro{color:var(--fg-2);margin-top:10px;max-width:46ch}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.grid figure{margin:0;min-width:0}
+.grid img{border-radius:14px;width:100%;aspect-ratio:4/5;object-fit:cover}
+.grid figure.wide{grid-column:1/-1}
+.grid figure.wide img{aspect-ratio:3/2}
+.grid figcaption{margin-top:8px;font-size:14px;color:var(--muted)}
+
+/* close */
+.close{padding-block:40px 56px;text-align:left}
+.close .big{font-family:var(--display);font-size:clamp(34px,7vw,58px);font-weight:300;line-height:1.05}
+.close .big em{font-style:italic;font-weight:500;color:var(--accent)}
+.close .sig{margin-top:14px}
+.info{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:6px;color:var(--fg-2);font-size:15px}
+.info b{color:var(--fg);font-weight:600}
+.info a{text-decoration:none;border-bottom:1px solid var(--accent-2)}
+
+@media (min-width:560px){
+  .stop{grid-template-columns:96px 1fr;gap:24px}
+  .stop::before{left:47px}
+  .stop .time{font-size:34px}
+  .grid{grid-template-columns:1fr 1fr 1fr}
+  .grid figure.wide{grid-column:span 1}
+  .grid figure.wide img{aspect-ratio:4/5}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero .wrap>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero .wrap>*:nth-child(2){animation-delay:.12s}.hero .wrap>*:nth-child(3){animation-delay:.24s}
+  @keyframes rise{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+</style></head><body>
+<section class="hero">
+  <img src="img/us1.jpg" alt="Anet a Honza na horách">
+  <div class="wrap">
+    <p class="eyebrow">7.–8. listopadu 2026</p>
+    <h1>Anet,<br>všechno nejlepší<br>k <em>třicátinám</em></h1>
+    <p class="sub">Tohle je tvůj dárek: den, kdy se o tebe bude někdo starat. Od začátku do konce.</p>
+  </div>
+</section>
+
+<section class="letter wrap">
+  <p>Třicet je dobrý důvod na chvíli zastavit. Žádné hory, žádný déšť, žádný batoh. Jen teplá voda, dobré jídlo a nikam nespěchat.</p>
+  <p>Zabalil jsem ti to do jednoho dne v Mníšku pod Brdy. Program máš níž.</p>
+  <p class="sig">— Honza</p>
+</section>
+
+<section class="gift wrap">
+  <div class="gcard">
+    <img src="img/hotel.jpg" alt="Esmarin Sport &amp; Wellness Hotel">
+    <div class="gbody">
+      <p class="eyebrow">Tvůj dárek</p>
+      <h2>Pobyt v hotelu Esmarin</h2>
+      <p class="stars">★★★★</p>
+      <p class="lead">Komorní wellness hotel s deseti pokoji kousek za Prahou. Heslo mají jednoduché: 100 % relax. Thajské masáže, čtyři sauny, bazén s protiproudem a restaurace La Terasa oceněná v průvodci Gault&amp;Millau.</p>
+      <dl class="facts">
+        <div class="fact"><dt>Kdy</dt><dd>7.–8. 11. 2026</dd></div>
+        <div class="fact"><dt>Kde</dt><dd>Mníšek pod Brdy</dd></div>
+        <div class="fact"><dt>Nocí</dt><dd>1, se snídaní</dd></div>
+        <div class="fact"><dt>V ceně</dt><dd>wellness &amp; fitness</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="day wrap">
+  <p class="eyebrow">Sobota 7. listopadu</p>
+  <h2>Jak bude vypadat tvůj den</h2>
+  <p class="intro">Tři pevné body, mezi nimi nic. Zbytek dne je na tobě: bazén, lehátko, kniha, nebo nic.</p>
+  <ol class="tl">
+    <li class="stop big">
+      <div class="time">14:00<small>sobota</small></div>
+      <div class="what">
+        <span class="pill">1. zastávka</span>
+        <h3>Thajská masáž</h3>
+        <p>Tradiční thajská technika, protažení a tlakové body. Po ní se chodí jinak. Masérky jsou z Thajska, takže to bude opravdové.</p>
+        <img src="img/masaz.jpg" alt="Thajská masáž v Esmarinu">
+      </div>
+    </li>
+    <li class="stop big">
+      <div class="time">17:00<small>sobota</small></div>
+      <div class="what">
+        <span class="pill">2. zastávka</span>
+        <h3>Wellness</h3>
+        <p>Bazén SwimSpa s vodou 32 °C a protiproudem, a čtyři sauny podle nálady:</p>
+        <ul>
+          <li><b>Finská sauna</b> 80–100 °C, pak ochlazovací bazének</li>
+          <li><b>Tepidárium</b> 35–40 °C, sálavé teplo a solná mlha z Mrtvého moře</li>
+          <li><b>Aromatická parní lázeň</b> 45 °C, vlhkost až 100 %</li>
+          <li><b>Infrasauna</b> a klidová místnost s lehátky a hudbou</li>
+        </ul>
+        <img src="img/bazen.jpg" alt="Bazén SwimSpa ve wellness Esmarin">
+      </div>
+    </li>
+    <li class="stop big">
+      <div class="time">20:00<small>sobota</small></div>
+      <div class="what">
+        <span class="pill">3. zastávka</span>
+        <h3>Večeře v La Terase</h3>
+        <p>Hotelová restaurace s otevřenou kuchyní a dvěma čepicemi od Gault&amp;Millau. Stůl pro dva, bez spěchu. Dezert si dáš, je to oslava.</p>
+        <img src="img/restaurace.jpg" alt="Restaurace La Terasa">
+      </div>
+    </li>
+    <li class="stop">
+      <div class="time">ráno<small>neděle</small></div>
+      <div class="what">
+        <h3>Snídaně a pomalé ráno</h3>
+        <p>Snídaně je v ceně, wellness je otevřené od osmi. Odjíždíme, až se nám bude chtít.</p>
+        <img src="img/pokoj.jpg" alt="Pokoj v hotelu Esmarin">
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="album wrap">
+  <p class="eyebrow">Pro vzpomínku</p>
+  <h2>Pár kilometrů, co máme za sebou</h2>
+  <p class="intro">Tentokrát bez kopců. Ale ať je jasné, s kým a proč se tenhle dárek dává.</p>
+  <div class="grid">
+    <figure><img src="img/us2.jpg" alt="Anet na hřebeni"><figcaption>Vítr, hřeben, ty.</figcaption></figure>
+    <figure class="wide"><img src="img/us3.jpg" alt="Anet a Honza u jezera"><figcaption>Podzim u jezera.</figcaption></figure>
+    <figure><img src="img/us1.jpg" alt="Anet a Honza v horském údolí"><figcaption>Údolí, kde jsme se smáli nejvíc.</figcaption></figure>
+  </div>
+</section>
+
+<section class="close wrap">
+  <p class="big">Všechno nejlepší,<br><em>Anet.</em></p>
+  <p class="sig">S láskou, Honza</p>
+  <div class="info">
+    <p><b>Esmarin Sport &amp; Wellness Hotel ****</b></p>
+    <p>Lhotecká 1535, 252 10 Mníšek pod Brdy</p>
+    <p>Recepce +420 702 005 006 · <a href="https://www.esmarin.cz" target="_blank" rel="noopener">www.esmarin.cz</a></p>
+    <p>Wellness otevřeno denně 8–22 h · osušky a župany půjčí na recepci</p>
+  </div>
+</section>
+
+</body></html>
